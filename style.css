@@ -100,4 +100,92 @@ p { margin: 0; }
   font-weight: bold;
 }
 
-.s
+.strike {
+  font-size: 14px;
+  text-decoration: line-through;
+  opacity: .5;
+}
+
+.trust {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  opacity: .6;
+}
+
+.final {
+  padding: 50px 20px;
+  background: #120020;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 30px;
+  background: #ffcc00;
+  color: #000;
+  font-weight: 700;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.bounce {
+  animation: bounce 2.5s infinite;
+}
+
+@keyframes bounce {
+  50% { transform: translateY(-4px); }
+}
+
+/* Clay character */
+.clay-character {
+  width: 110px;
+  height: 110px;
+  background: #ffcc00;
+  border-radius: 48% 52% 50% 50%;
+  margin: 0 auto 14px;
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+.eye {
+  width: 12px;
+  height: 12px;
+  background: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 40px;
+}
+.eye.left { left: 32px; }
+.eye.right { right: 32px; }
+
+.mouth {
+  width: 26px;
+  height: 10px;
+  background: #000;
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.wa-float {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  background: #25d366;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,.35);
+}
