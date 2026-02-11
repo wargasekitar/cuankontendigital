@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Cuan Konten Digital | Claymation Studio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Claymation storytelling untuk brand, UMKM, dan kreator.">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Cuan Konten Digital | Claymation Studio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Claymation storytelling untuk brand, UMKM, dan kreator.">
+<meta name="theme-color" content="#15002b">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="hero clay">
-  <div class="blob"></div>
+<header class="hero">
+  <div class="live-counter">
+    🔥 <span id="viewerCount">27</span> orang sedang melihat halaman ini
+  </div>
 
   <div class="clay-character">
     <div class="face">
@@ -18,82 +21,65 @@
       <div class="eye right"></div>
       <div class="mouth"></div>
     </div>
+    <div class="speech-bubble" id="clayTalk"></div>
   </div>
 
   <h1>Bikin Konten<br><span>Berhenti Scroll</span></h1>
-  <p class="sub">
-    Claymation storytelling yang bikin kontenmu beda dan diingat.
-  </p>
+  <p class="sub">Claymation storytelling yang bikin brand lebih diingat.</p>
 
-  <a href="#order" class="cta bounce">Mulai Claymation Sekarang</a>
+  <a href="#order" class="cta primary">Mulai Sekarang</a>
+
+  <div class="video-preview">
+    <video autoplay muted loop playsinline>
+      <source src="clay-preview.mp4" type="video/mp4">
+    </video>
+  </div>
 </header>
 
 <section class="section reveal">
   <h2>Kenapa Banyak Konten Gagal?</h2>
-  <p>
-    Visual terlalu biasa. Cerita nggak nempel.  
-    Audiens scroll tanpa peduli.
-  </p>
+  <p>Visual biasa. Cerita tidak nempel. Audiens langsung scroll.</p>
 </section>
 
-<section class="section reveal alt">
-  <h2>Solusinya: Claymation</h2>
-  <p>
-    Gerakan tidak sempurna justru terasa manusiawi  
-    dan lebih melekat di ingatan penonton.
-  </p>
-</section>
-
-<section class="benefits">
-  <div class="card clay">🎭 Visual Unik</div>
-  <div class="card clay">📱 Shorts Friendly</div>
-  <div class="card clay">🧠 Mudah Diingat</div>
-  <div class="card clay">🚀 Siap Branding</div>
-</section>
-
-<section class="section reveal">
-  <h2>Alur Kerja Singkat</h2>
-  <div class="step-grid">
-    <div class="step clay">📝 Brief</div>
-    <div class="step clay">🎭 Story</div>
-    <div class="step clay">🎬 Produksi</div>
-    <div class="step clay">🚀 Upload</div>
-  </div>
-</section>
-
-<section class="testimonial reveal">
-  <div class="testi-box clay">
-    “Kontennya beda, kelihatan niat, dan enak buat storytelling brand.”
-    <span>— Kreator & UMKM</span>
-  </div>
-</section>
-
-<section id="order" class="pricing reveal clay">
+<section id="order" class="pricing reveal">
   <h2>Claymation Story Teller</h2>
 
   <div class="price-box">
     <p class="price">IDR 119.000</p>
     <p class="strike">Normal 500.000</p>
 
-    <a href="https://lynk.id/cuankontendigital" class="cta bounce">
+    <a href="https://lynk.id/cuankontendigital" class="cta primary order-btn">
       Order Sekarang
     </a>
 
-    <small class="trust">
-      Brief singkat • Siap upload • Tanpa ribet
-    </small>
+    <div class="countdown-box">
+      <small>Slot produksi tutup dalam:</small>
+      <div id="countdown" class="countdown"></div>
+    </div>
   </div>
 </section>
 
-<footer class="final">
-  <h3>Konten yang Diingat<br>Lebih Mudah Jadi Cuan</h3>
-  <a href="https://lynk.id/cuankontendigital" class="cta bounce">
-    Mulai Hari Ini
-  </a>
-</footer>
+<!-- Live Chat Style -->
+<div class="chat-box">
+  <div class="chat-message" id="chatTyping"></div>
+</div>
 
-<a href="https://wa.me/6285156230297?text=Halo,%20saya%20tertarik%20Claymation%20Story%20Teller"
-   class="wa-float" target="_blank">💬</a>
+<!-- Sticky Mobile CTA -->
+<div class="sticky-cta">
+  <a href="https://lynk.id/cuankontendigital">🔥 Order Sekarang</a>
+</div>
+
+<!-- Popup -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <h3>🎁 Diskon Hari Ini</h3>
+    <p>Dapatkan harga spesial untuk order pertama.</p>
+    <a href="https://lynk.id/cuankontendigital" class="cta primary">
+      Klaim Sekarang
+    </a>
+    <span class="close-popup" onclick="closePopup()">×</span>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
