@@ -6,14 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Claymation storytelling untuk brand, UMKM, dan kreator.">
 <meta name="theme-color" content="#15002b">
+<link rel="preconnect" href="https://lynk.id">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="hero">
-  <div class="live-counter">
-    🔥 <span id="viewerCount">27</span> orang sedang melihat halaman ini
-  </div>
+  <div class="blob"></div>
 
   <div class="clay-character">
     <div class="face">
@@ -21,24 +20,53 @@
       <div class="eye right"></div>
       <div class="mouth"></div>
     </div>
-    <div class="speech-bubble" id="clayTalk"></div>
+    <div class="speech-bubble" id="clayTalk">
+      Kontenmu gampang dilupakan...
+    </div>
   </div>
 
   <h1>Bikin Konten<br><span>Berhenti Scroll</span></h1>
-  <p class="sub">Claymation storytelling yang bikin brand lebih diingat.</p>
+  <p class="sub">
+    Claymation storytelling yang bikin brand lebih diingat.
+  </p>
 
-  <a href="#order" class="cta primary">Mulai Sekarang</a>
-
-  <div class="video-preview">
-    <video autoplay muted loop playsinline>
-      <source src="clay-preview.mp4" type="video/mp4">
-    </video>
-  </div>
+  <a href="#order" class="cta primary">
+    Mulai Claymation Sekarang
+  </a>
 </header>
 
 <section class="section reveal">
   <h2>Kenapa Banyak Konten Gagal?</h2>
-  <p>Visual biasa. Cerita tidak nempel. Audiens langsung scroll.</p>
+  <p>Visual terlalu biasa. Cerita tidak nempel. Audiens scroll tanpa peduli.</p>
+</section>
+
+<section class="section alt reveal">
+  <h2>Solusinya: Claymation</h2>
+  <p>Gerakan tidak sempurna terasa manusiawi dan lebih melekat di ingatan.</p>
+</section>
+
+<section class="benefits reveal">
+  <div class="card">🎭 Visual Unik</div>
+  <div class="card">📱 Shorts Friendly</div>
+  <div class="card">🧠 Mudah Diingat</div>
+  <div class="card">🚀 Siap Branding</div>
+</section>
+
+<section class="section reveal">
+  <h2>Alur Kerja Singkat</h2>
+  <div class="step-grid">
+    <div class="step">📝 Brief</div>
+    <div class="step">🎭 Story</div>
+    <div class="step">🎬 Produksi</div>
+    <div class="step">🚀 Upload</div>
+  </div>
+</section>
+
+<section class="testimonial reveal">
+  <div class="testi-box">
+    “Kontennya beda, kelihatan niat, dan enak buat storytelling brand.”
+    <span>— Kreator & UMKM</span>
+  </div>
 </section>
 
 <section id="order" class="pricing reveal">
@@ -48,31 +76,36 @@
     <p class="price">IDR 119.000</p>
     <p class="strike">Normal 500.000</p>
 
-    <a href="https://lynk.id/cuankontendigital" class="cta primary order-btn">
+    <a href="https://lynk.id/cuankontendigital" class="cta primary">
       Order Sekarang
     </a>
 
     <div class="countdown-box">
-      <small>Slot produksi tutup dalam:</small>
+      <small>Slot produksi minggu ini tutup dalam:</small>
       <div id="countdown" class="countdown"></div>
     </div>
+
+    <small class="trust">
+      Brief singkat • Siap upload • Tanpa ribet
+    </small>
   </div>
 </section>
 
-<!-- Live Chat Style -->
-<div class="chat-box">
-  <div class="chat-message" id="chatTyping"></div>
-</div>
+<footer class="final">
+  <h3>Sudah Siap Bikin Konten<br>Yang Orang Ingat?</h3>
+  <a href="https://lynk.id/cuankontendigital" class="cta primary">
+    Amankan Slot Sekarang
+  </a>
+  <small class="urgency">Produksi terbatas setiap minggu</small>
+</footer>
 
-<!-- Sticky Mobile CTA -->
-<div class="sticky-cta">
-  <a href="https://lynk.id/cuankontendigital">🔥 Order Sekarang</a>
-</div>
+<a href="https://wa.me/6285156230297?text=Halo,%20saya%20tertarik%20Claymation%20Story%20Teller"
+   class="wa-float" target="_blank">💬</a>
 
-<!-- Popup -->
+<!-- Popup Diskon -->
 <div id="popup" class="popup">
   <div class="popup-content">
-    <h3>🎁 Diskon Hari Ini</h3>
+    <h3>🎁 Diskon Khusus Hari Ini</h3>
     <p>Dapatkan harga spesial untuk order pertama.</p>
     <a href="https://lynk.id/cuankontendigital" class="cta primary">
       Klaim Sekarang
