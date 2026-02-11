@@ -1,48 +1,50 @@
 // Scroll Reveal
-const reveals = document.querySelectorAll('.reveal');
-
-window.addEventListener('scroll', () => {
-  reveals.forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight - 80) {
+const reveals=document.querySelectorAll('.reveal');
+window.addEventListener('scroll',()=>{
+  reveals.forEach(el=>{
+    if(el.getBoundingClientRect().top<window.innerHeight-80){
       el.classList.add('active');
     }
   });
 });
 
-// Clay Talk Auto
-const bubble = document.getElementById('clayTalk');
-const messages = [
-  "Kontenmu gampang dilupakan...",
-  "Visual terlalu biasa.",
-  "Claymation bikin cerita hidup.",
-  "Orang berhenti scroll.",
-  "Dan akhirnya... cuan."
-];
+// PARTICLE BACKGROUND
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
 
-let i = 0;
-
-setInterval(() => {
-  bubble.textContent = messages[i];
-  i = (i + 1) % messages.length;
-}, 2500);
-
-// Countdown 48 jam
-const countdownEl = document.getElementById("countdown");
-
-let endTime = localStorage.getItem("slotEndTime");
-
-if (!endTime) {
-  endTime = new Date().getTime() + (48 * 60 * 60 * 1000);
-  localStorage.setItem("slotEndTime", endTime);
+let particles=[];
+for(let i=0;i<80;i++){
+  particles.push({
+    x:Math.random()*canvas.width,
+    y:Math.random()*canvas.height,
+    r:Math.random()*2+1,
+    dx:(Math.random()-0.5)*0.5,
+    dy:(Math.random()-0.5)*0.5
+  });
 }
 
-setInterval(() => {
-  const now = new Date().getTime();
-  const distance = endTime - now;
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle="rgba(255,204,0,.6)";
+  particles.forEach(p=>{
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fill();
 
-  const hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
-  const minutes = Math.floor((distance % (1000*60*60))/(1000*60));
-  const seconds = Math.floor((distance % (1000*60))/1000);
+    p.x+=p.dx;
+    p.y+=p.dy;
 
-  countdownEl.innerHTML = hours + "j " + minutes + "m " + seconds + "d";
-}, 1000);
+    if(p.x<0||p.x>canvas.width)p.dx*=-1;
+    if(p.y<0||p.y>canvas.height)p.dy*=-1;
+  });
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+window.addEventListener('resize',()=>{
+  canvas.width=window.innerWidth;
+  canvas.height=window.innerHeight;
+});
